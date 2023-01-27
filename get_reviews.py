@@ -18,15 +18,10 @@ for i in range(len(list(languages.part1))):
 
     df_res = pd.DataFrame(result)
 
-    for i in range(len(df_res)):
-        if df_res["reviewId"][i] in df_all['reviewId'].values:
-            df_res = df_res.drop([i])
-        else:
-            pass
-
     for item in df_res.items():
         df_res["lang"] = review_language
 
     df_all = pd.concat([df_all, df_res])  # append is deprecated and will be removed from pandas in a future version
 
+df_all = df_all.drop_duplicates(subset=['reviewId'])
 df_all.to_csv("de.rki.coronawarnapp_rev.csv", sep='\t', encoding='utf-8')
