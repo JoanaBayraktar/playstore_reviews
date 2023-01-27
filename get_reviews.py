@@ -3,7 +3,7 @@ import pandas as pd
 from iso639 import languages
 
 df_all = pd.DataFrame(
-    columns=["reviewId", "userImage", "content	score", "thumbsUpCount", "reviewCreatedVersion", "at", "replyContent",
+    columns=["reviewId", "userName", "userImage", "content	score", "thumbsUpCount", "reviewCreatedVersion", "at", "replyContent",
              "repliedAt", "lang"])
 
 for i in range(len(list(languages.part1))):
