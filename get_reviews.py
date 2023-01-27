@@ -20,7 +20,6 @@ for i in range(len(list(languages.part1))):
 
     for item in df_res.items():
         df_res["lang"] = review_language
-        df_res["country"] = review_country
 
     df_all = pd.concat([df_all, df_res]) #append is deprecated and will be removed from pandas in a future version
 
